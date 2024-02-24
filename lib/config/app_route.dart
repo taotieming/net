@@ -1,3 +1,4 @@
+import 'package:netsecurityapp/pages/acountmanager/manager_acount_page.dart';
 import 'package:netsecurityapp/pages/acountmanager/ttm_profile.dart';
 import 'package:netsecurityapp/pages/acountmanager/ttm_userlogin.dart';
 import 'package:netsecurityapp/pages/mainpage.dart';
@@ -16,6 +17,7 @@ class AppRoute {
     // editProfile: (context) => EditprofilePage(),
     // nearby: (context) => NearByPage(),
     user: (context) => MyProfilePage(),
+    manageacount: (context) => ManagerAcountPage(),
   };
 
   static const login = '/';
@@ -24,4 +26,5 @@ class AppRoute {
   static const editProfile = '/editprofile';
   static const nearby = '/nearby';
   static const user = '/user';
+  static const manageacount = '/editprofile/managerzcount';
 }

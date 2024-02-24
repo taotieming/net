@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netsecurityapp/config/app_route.dart';
 import 'package:netsecurityapp/config/app_string.dart';
 
 class MyProfilePage extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppStrings.myProfile),
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
@@ -28,9 +29,21 @@ class MyProfilePage extends StatelessWidget {
           Text('性别'),
           Text('学号'),
           Text('手机号'),
-          ElevatedButton(onPressed: () {}, child: Text('修改密码')),
-          ElevatedButton(onPressed: () {}, child: Text('退出登录')),
-          ElevatedButton(onPressed: () {}, child: Text('修改信息'))
+          Text('账户管理'),
+          Row(
+            children: [
+              ElevatedButton(onPressed: () {}, child: Text('修改密码')),
+              ElevatedButton(onPressed: () {}, child: Text('退出登录')),
+              ElevatedButton(onPressed: () {}, child: Text('修改信息')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoute.manageacount);
+                  },
+                  child: Text('账户管理'))
+            ],
+          )
+
+          //
         ],
       ),
     );

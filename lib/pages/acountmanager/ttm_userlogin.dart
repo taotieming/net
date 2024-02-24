@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netsecurityapp/config/app_route.dart';
+import 'package:netsecurityapp/config/token_get.dart';
 import 'package:netsecurityapp/provider/login_provider.dart';
 import 'package:netsecurityapp/styles/my_app_color.dart';
 import 'package:provider/provider.dart';
@@ -47,7 +48,7 @@ class NetSecuLoginPage extends StatelessWidget {
                       // 点击了登录
                       context.read<LoginProvider>().login().then((value) {
                         print("先获取到token");
-                        print(value.token);
+                        TokenGet().saveToken(value.token);
                         context.read<LoginProvider>().usertoken = value.token;
                       });
                       Navigator.of(context).pushReplacementNamed(AppRoute.main);
