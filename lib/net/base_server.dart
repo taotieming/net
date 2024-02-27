@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-// import 'package:http_parser/http_parser.dart' as parser;
 
+// import 'package:http_parser/http_parser.dart' as parser;
+// 网络请求的基本类，用来处理其他过来的业务请求
 abstract class ServiceBase<T> {
   Future<T> call();
 
@@ -12,7 +13,8 @@ abstract class ServiceBase<T> {
   Future<Map<String, dynamic>> basepost(
       Map<String, dynamic> body, String apiurl) async {
     try {
-      return _handleResponse(await Myrequest().get(_getUrl(apiurl)));
+      return _handleResponse(
+          await Myrequest().post(_getUrl(apiurl), body: jsonEncode(body)));
     } catch (e) {
       throw Exception(e);
     }
@@ -36,10 +38,11 @@ abstract class ServiceBase<T> {
 class Myrequest extends http.BaseClient {
   @override
   Future<http.StreamedResponse> send(http.BaseRequest request) {
-    // var token = 'asd';
-    // if (token != null) {
-    //   request.headers['Authorization'] = token!;
-    // }
+    var token =
+        "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDkxMTczODMsImp0aSI6IjEiLCJpYXQiOjE3MDkwMzA5ODMsInN1YiI6IjEifQ.OaatbsYVygnbYJqbyIn0FzsP1mE50YzcjYrKMMsYbYckVVdDo3BFg09NV1GVbwiuQwwFridi4DhURSElVa_Npw           ";
+    if (token != null) {
+      request.headers['Authorization'] = token!;
+    }
     return request.send();
   }
 }

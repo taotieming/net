@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netsecurityapp/commponet/ttm_user_avart.dart';
 import 'package:netsecurityapp/config/app_route.dart';
 import 'package:netsecurityapp/config/app_string.dart';
 
@@ -15,12 +16,9 @@ class MyProfilePage extends StatelessWidget {
       body: Column(
         children: [
           Center(
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.red,
-            ),
-          ),
+              child: UserAvatar(
+            size: 40,
+          )),
           Text('姓名'),
           Text('学校'),
           Text('院系'),

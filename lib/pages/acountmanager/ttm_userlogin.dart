@@ -50,6 +50,7 @@ class NetSecuLoginPage extends StatelessWidget {
                       context.read<LoginProvider>().login().then((value) {
                         print("先获取到token");
                         context.read<AppGlobalProvider>().token = value.token;
+                        // AppGlobalProvider().token = value.token;
                         TokenGet().saveToken(value.token);
                         context.read<LoginProvider>().usertoken = value.token;
                       });
