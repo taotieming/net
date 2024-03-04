@@ -28,8 +28,11 @@ class MyProfilePage extends StatelessWidget {
           Text('学号'),
           Text('手机号'),
           Text('账户管理'),
-          Row(
-            children: [
+          Wrap(
+            spacing: 8.0, // 主轴(水平)方向间距
+            runSpacing: 4.0, // 纵轴（垂直）方向间距
+            alignment: WrapAlignment.center, //沿主轴方向居中
+            children: <Widget>[
               ElevatedButton(onPressed: () {}, child: Text('修改密码')),
               ElevatedButton(onPressed: () {}, child: Text('退出登录')),
               ElevatedButton(onPressed: () {}, child: Text('修改信息')),
@@ -37,9 +40,27 @@ class MyProfilePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed(AppRoute.manageacount);
                   },
-                  child: Text('账户管理'))
+                  child: Text('账户管理')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoute.studyCenter);
+                  },
+                  child: Text('学习中心')),
+              ElevatedButton(onPressed: () {}, child: Text('竞赛中心')),
+              ElevatedButton(onPressed: () {}, child: Text('积分中心')),
+              ElevatedButton(onPressed: () {}, child: Text('课堂管理')),
+              ElevatedButton(onPressed: () {}, child: Text('实验镜像管理')),
+              ElevatedButton(onPressed: () {}, child: Text('实训资源管理')),
+              ElevatedButton(onPressed: () {}, child: Text('实训资源管理')),
+              ElevatedButton(onPressed: () {}, child: Text('课堂资料管理')),
+              ElevatedButton(onPressed: () {}, child: Text('题目管理')),
+              ElevatedButton(onPressed: () {}, child: Text('试卷管理')),
+              ElevatedButton(onPressed: () {}, child: Text('基础配置')),
+              ElevatedButton(onPressed: () {}, child: Text('账户管理')),
+              ElevatedButton(onPressed: () {}, child: Text('共享管理')),
+              ElevatedButton(onPressed: () {}, child: Text('权限管理')),
             ],
-          )
+          ),
 
           //
         ],

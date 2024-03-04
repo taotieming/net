@@ -15,4 +15,7 @@ class Api {
   static const updateadminUrl = '$baseurl/admin/admin/update';
   // 添加管理员
   static const addadminUrl = '$baseurl/admin/admin/add';
+
+  // 学习中心
+  static const studycenterList = '$baseurl/admin/study/typeList';
 }
